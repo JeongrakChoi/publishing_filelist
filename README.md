@@ -9,12 +9,14 @@
 
 ## 디렉토리  
 ```
-filelist.html
-└ resources 
+/
+filelist.html       // HTML 파일 리스트
+└ front             // HTML 경로
+  └ main
+  └ ..
+└ resources         // 리소스 경로
   └ css
   └ js
   └ images
-└ front
-  └ main
-  └ ..
+
 ```
