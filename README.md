@@ -9,7 +9,6 @@
 
 ## 디렉토리  
 ```
-/
 └ resources 
   └ css
   └ js
