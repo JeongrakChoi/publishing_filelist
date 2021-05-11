@@ -1,20 +1,20 @@
-# JeongrakChoi.github.io
+# 웹 퍼블리셔 작업용 파일리스트  
 
-개인 블로그 겸 포트폴리오 사이트입니다.
-<br>
+## 개요  
+- 주 사용자 : 웹 퍼블리셔, 웹 디자이너
+- 사용 목적 : 프로젝트시 협업 단계에서 프론트 화면을 보다 빠르게 공유하기 위함.  
 
-Welcome to my github.  
-This is my portfolio and blog site.
-<br>
+## 개발 환경
+- Local  
 
-<a href="https://jeongrakchoi.github.io/" target="_blank">https://jeongrakchoi.github.io/</a>
-<br>
-
-## Theme by
-
-[Grape-Theme](https://github.com/naye0ng/Grape-Theme)
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+## 디렉토리  
+```
+/
+└ resources 
+  └ css
+  └ js
+  └ images
+└ front
+  └ main
+  └ ..
+```
