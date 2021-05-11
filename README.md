@@ -1,5 +1,7 @@
 # 웹 퍼블리셔 작업용 파일리스트  
 
+![filelist](./resources/images/filelist.jpg)
+
 ## 개요  
 - 주 사용자 : 웹 퍼블리셔, 웹 디자이너
 - 설명  
