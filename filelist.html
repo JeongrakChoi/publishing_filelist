@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project FileList By Jeongrak</title>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+<![endif]-->
+<script>
+$(function(){
+	var $selector = $('.list-nav li');
+
+	$selector.on('click',function(e){
+		var $this = $(e.currentTarget);
+		var $target = $('#iframe');
+		var $headingTitle = $('.content h3');
+		var type = $this.attr('data-url');
+		var fileName = $this.text();
+
+		$selector.removeClass('selected');
+		$this.addClass('selected');
+
+		if(type == undefined || type == null){
+			$headingTitle.text(fileName);
+			$target.attr('src',fileName+'.html');
+		} else {
+			$headingTitle.text(type+'/'+fileName);
+			$target.attr('src',type+'/'+fileName+'.html');
+		}
+	});
+	$selector.eq(0).trigger('click');
+});
+
+$(function(){
+	$('.list-nav ul li').append("<a href='#' target='_blank'></a>");
+	$(".list-nav ul li a").each(function(index, element) {
+		var from = $(this).parent("li").attr('data-url');
+		var fileName = $(this).parent("li").text();
+		
+		$(this).attr('href',from+'/'+fileName+'.html');
+	});
+});
+</script>
+<style>
+	/* NanumGothic */
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	
+	/* HTML Reset */
+	.list-wrap{width:100%; font-family:'Nanum Gothic', Dotum, Helvetica, 'Apple SD Gothic Neo', Sans-serif; overflow:auto}
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h3,h3,h4,h5,form,fieldset,p,button{margin:0; padding:0}
+	img,fieldset{border:0 none}
+	li{list-style:none}
+
+	/* Style */
+	.list-wrap{padding:50px 0 0 0}
+	.list-wrap .list-header{position:fixed; left:0; top:0; width:100%; height:50px; background:#666; z-index:50; border-bottom:2px solid #999; box-sizing:border-box; padding:10px}
+	.list-wrap .list-header h1{color:#fff; font-size:25px; font-weight:800; display:inline; font-style:italic}
+	.list-wrap .list-header h2{color:#fff; font-size:13px; font-weight:800; display:inline; font-style:italic; margin-left:5px}
+	.list-wrap .list-header h2 span{font-style:normal}
+	.list-wrap .list-nav{position:fixed; left:0; top:50px; bottom:0; z-index:10; width:250px; padding:10px; border-right:2px solid #cdcdcd; background-color:#ededed; box-sizing:border-box; overflow-y:auto;}
+	.list-wrap .list-nav h3{font-size:16px; font-weight:800; color:#111}
+	.list-wrap .list-nav ul{margin:15px 0;}
+	.list-wrap .list-nav ul li{padding:5px 55px 5px 10px; font-size:12px; cursor:pointer; word-break:break-all; word-list-wrap:break-word; position:relative; color:#111}
+	.list-wrap .list-nav ul li a{position:absolute; right:5px; top:5px; z-index:5; display:inline-block; color:#dcdcdc; text-decoration:none; color:#111}
+	.list-wrap .list-nav ul li a:before{content:'_blank'; color:#111}
+	.list-wrap .list-nav ul li a:hover{color:#fff}
+	.list-wrap .list-nav ul li a:hover:before{color:#fff}
+	.list-wrap .list-nav ul li:hover{color:#fff; background-color:#3d3d3d;}
+	.list-wrap .list-nav ul li.selected{color:#f9f9f9; background-color:#999;}
+	.list-wrap .content{position:absolute; left:250px; right:0; top:100px; bottom:0;}
+	.list-wrap .content h3{position:absolute; left:0; right:0; top:-50px; height:50px; padding:0 20px; color:#000; font-size:18px; line-height:50px; border-bottom:2px solid #cdcdcd; background-color:#ededed; z-index:2; -webkit-box-sizing:border-box; font-weight:800}
+	.list-wrap .content iframe{position:absolute; left:0; top:0; width:100%; height:100%;}
+</style>
+</head>
+
+<body class="list-wrap">
+	<div class="list-header">
+		<h1>Project Name</h1>
+		<h2>Published by <span>Jeongrak</span></h2>
+	</div>
+
+    <div class="list-nav">
+		<h3>Main</h3>
+		<ul>
+			<li data-url="front/main">main</li>
+		</ul>
+	
+		<h3>Sub01</h3>
+		<ul>
+			<li data-url="front/sub">sub01_01</li>
+			<li data-url="front/sub">sub02_01</li>
+		</ul>
+
+		<h3>Sub02</h3>
+		<ul>
+			<li data-url="front/sub">sub02_01</li>
+			<li data-url="front/sub">sub02_02</li>
+		</ul>
+
+		<h3>ETC</h3>
+		<ul>
+			<li data-url="front/etc">etc</li>
+		</ul>
+
+	</div>
+	<div class="content">
+		<h3></h3>
+		<iframe id="iframe" src="" frameborder="0" scrollbars="auto"></iframe>
+	</div>
+</body>
+</html>
